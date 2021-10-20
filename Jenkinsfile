@@ -4,6 +4,12 @@
   }
     agent any
     stages {
+        stage('Slack Message') {
+            steps {
+                slackSend color: '#BADA55', message: 'successfull!!'
+            }
+        }
+
         stage('Clean') {
             steps {
                 echo 'Cleaning..'
